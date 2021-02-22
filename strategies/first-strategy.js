@@ -44,10 +44,10 @@ strat.check = function(candle) {
 
   console.log(ema9, ema21, ema55);
 
-  if (ema9 < ema21 && ema21 < ema55 && rsi >= 30) {
+  if (ema9 < ema21 && ema21 < ema55 && rsi > 30) {
   	console.log('short');
   	this.advice('short');
-  } else if (ema9 > ema21 && ema21 > ema55 && rsi <= 70) {
+  } else if (ema9 > ema21 && ema21 > ema55 && rsi < 70) {
   	console.log('long');
   	this.advice('long');
   }
