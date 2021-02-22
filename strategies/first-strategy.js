@@ -40,16 +40,18 @@ strat.check = function(candle) {
   const ema9 = this.talibIndicators.ema9.result.outReal;
   const ema21 = this.talibIndicators.ema21.result.outReal;
   const ema55 = this.talibIndicators.ema55.result.outReal;
-  const rsi = this.talibIndicators.rsi.result.outReal
+  const rsi = this.talibIndicators.rsi.result.outReal;
 
-  console.log(ema9, ema21, ema55);
-
-  if (ema9 < ema21 && ema21 < ema55 && rsi > 30) {
-  	console.log('short');
-  	this.advice('short');
-  } else if (ema9 > ema21 && ema21 > ema55 && rsi < 70) {
+  // console.log(ema9, ema21, ema55);
+  if (rsi < 15) {
   	console.log('long');
   	this.advice('long');
+  } else if (ema9 > ema21 && ema21 > ema55) {
+  	console.log('long');
+  	this.advice('long');
+  } else if (rsi > 50) {
+  	console.log('short');
+  	this.advice('short');
   }
 }
 
